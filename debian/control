@@ -1,30 +1,29 @@
-Source: liblingmo
-Section: devel
+﻿Source: lingmo-desktop-services
+Section: libs
 Priority: optional
-Maintainer: LingmoOS <lingmo@lingmo.org>
-Build-Depends: cmake,
-               debhelper (>= 9),
-               extra-cmake-modules,
-               libkf5networkmanagerqt-dev,
-               libkf5kio-dev,
-               libkf5screen-dev,
-               libkf5bluezqt-dev,
-               modemmanager-qt-dev,
-               libqt5sensors5-dev,
-               libcanberra-dev,
-               libpulse-dev,
-               sound-theme-freedesktop,
-               qtbase5-dev,
-               qtdeclarative5-dev,
-               qtquickcontrols2-5-dev,
-               qttools5-dev,
-               qttools5-dev-tools
-Standards-Version: 4.5.0
-Homepage: https://lingmo.org
+Maintainer: Lingmo OS Team <team@lingmo.org>
+Build-Depends:
+    cmake (>= 3.20),
+    debhelper-compat (= 13),
+    pkg-config,
+    qt6-base-dev (>= 6.5),
+    qt6-base-dev, qt6-declarative-dev,
+Standards-Version: 4.6.2
+Homepage: https://github.com/lingmo-os/lingmo-desktop-services
+Rules-Requires-Root: no
 
-Package: liblingmo
+Package: liblingmo-desktop-services1
 Architecture: any
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
-         libkf5screen-bin
-Description: LingmoOS Library
+Depends:
+    ,
+    ,
+Description: Lingmo Desktop Services
+ Lingmo Desktop Lingmo Desktop Services.
+
+Package: liblingmo-desktop-services-dev
+Architecture: any
+Depends:
+    liblingmo-desktop-services1 (= ),
+    ,
+Description: Lingmo Desktop Services - development files
+ This package contains the development files.
