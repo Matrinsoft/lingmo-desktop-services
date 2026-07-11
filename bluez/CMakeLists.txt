@@ -13,7 +13,11 @@ set(bluezqtextensionplugin_SRCS
 
 add_library(lingmobluez_qmlplugins SHARED ${bluezqtextensionplugin_SRCS})
 
-find_package(KF6BluezQt REQUIRED)
+find_package(KF6BluezQt QUIET)
+if(NOT KF6BluezQt_FOUND)
+    message(STATUS "KF6BluezQt not found, skipping bluez plugin")
+    return()
+endif()
 
 target_link_libraries(lingmobluez_qmlplugins
     Qt6::Core
