@@ -1,10 +1,9 @@
-﻿set(bluezqtextensionplugin_SRCS
+set(bluezqtextensionplugin_SRCS
     declarativemanager.cpp
     declarativeadapter.cpp
     # declarativebattery.cpp
     declarativedevice.cpp
     declarativeinput.cpp
-    declarativemediaplayer.cpp
     declarativedevicesmodel.cpp
     bluezqtextensionplugin.cpp
     applet/devicesproxymodel.cpp
@@ -14,7 +13,7 @@
 
 add_library(lingmobluez_qmlplugins SHARED ${bluezqtextensionplugin_SRCS})
 
-find_package(KF5BluezQt REQUIRED)
+find_package(KF6BluezQt REQUIRED)
 
 target_link_libraries(lingmobluez_qmlplugins
     Qt6::Core

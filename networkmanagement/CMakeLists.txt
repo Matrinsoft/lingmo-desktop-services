@@ -1,4 +1,4 @@
-﻿set(NETWORKMGR_SRCS
+set(NETWORKMGR_SRCS
     appletproxymodel.cpp
     appletproxymodel.h
 
@@ -42,13 +42,13 @@
     qmlplugins.h
 )
 
-find_package(KF5NetworkManagerQt REQUIRED)
-find_package(KF5ModemManagerQt REQUIRED)
+find_package(KF6NetworkManagerQt REQUIRED)
+find_package(KF6ModemManagerQt REQUIRED)
 
 add_library(lingmonm_qmlplugins SHARED ${NETWORKMGR_SRCS})
 generate_export_header(lingmonm_qmlplugins EXPORT_FILE_NAME ${CMAKE_CURRENT_BINARY_DIR}/networkmanager_export.h BASE_NAME NetworkManager)
 
-target_link_libraries (lingmonm_qmlplugins
+target_link_libraries(lingmonm_qmlplugins
     Qt6::Core
     Qt6::Quick
     Qt6::Gui

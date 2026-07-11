@@ -1,4 +1,4 @@
-﻿set(SCREEN_SRCS
+set(SCREEN_SRCS
     common/control.cpp
     common/globals.cpp
     common/orientation_sensor.cpp
@@ -9,13 +9,13 @@
     screen.cpp
 )
 
-find_package(KF5Screen REQUIRED)
-find_package(KF5KIO REQUIRED)
+find_package(KF6Screen REQUIRED)
+find_package(KF6KIO REQUIRED)
 find_package(Qt6 REQUIRED COMPONENTS Test Sensors)
 
 add_library(lingmoscreen_qmlplugins SHARED ${SCREEN_SRCS})
 
-target_link_libraries (lingmoscreen_qmlplugins
+target_link_libraries(lingmoscreen_qmlplugins
     Qt6::Core
     Qt6::Quick
     Qt6::Gui
