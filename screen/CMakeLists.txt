@@ -9,13 +9,9 @@ set(SCREEN_SRCS
     screen.cpp
 )
 
-find_package(KF6Screen QUIET)
-find_package(KF6KIO QUIET)
+find_package(KF6Screen REQUIRED)
+find_package(KF6KIO REQUIRED)
 find_package(Qt6 REQUIRED COMPONENTS Test Sensors)
-if(NOT KF6Screen_FOUND)
-    message(STATUS "KF6Screen not found, skipping screen plugin")
-    return()
-endif()
 
 add_library(lingmoscreen_qmlplugins SHARED ${SCREEN_SRCS})
 

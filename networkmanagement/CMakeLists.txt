@@ -42,12 +42,8 @@ set(NETWORKMGR_SRCS
     qmlplugins.h
 )
 
-find_package(KF6NetworkManagerQt QUIET)
-find_package(KF6ModemManagerQt QUIET)
-if(NOT KF6NetworkManagerQt_FOUND)
-    message(STATUS "KF6NetworkManagerQt not found, skipping networkmanagement plugin")
-    return()
-endif()
+find_package(KF6NetworkManagerQt REQUIRED)
+find_package(KF6ModemManagerQt REQUIRED)
 
 add_library(lingmonm_qmlplugins SHARED ${NETWORKMGR_SRCS})
 generate_export_header(lingmonm_qmlplugins EXPORT_FILE_NAME ${CMAKE_CURRENT_BINARY_DIR}/networkmanager_export.h BASE_NAME NetworkManager)
